@@ -18,15 +18,13 @@ body{
 
 h1 {
     font-family: 'Roboto', sans-serif;
-    background: linear-gradient(to right, #bd14cc, #e9d8e9bb);
     text-align: center;
     background-color: black;
     color: white;
-    padding: 20px;
+    padding: 10px;
+    background: linear-gradient(to right,  #db0669d3, #f5c764cb);
     
 }
-
-
 
 h2 {
     text-align: center;
@@ -71,10 +69,10 @@ span{
 }
 
 nav ul{
-    background-color: #9c05aa;
     width: 100%;
     list-style-type: none;
     text-align: center;
+    background: linear-gradient(to right,  #db0669d3, #f5c764cb);
 }
 
 nav ul li{
@@ -124,9 +122,6 @@ img:hover {
     
 }
 
-.container {
-    flex-direction: column;
-}
 .sections {
     display: flex;
     flex-direction: column-reverse; /* Cambia el orden de los elementos para móviles */
@@ -137,27 +132,65 @@ img:hover {
 
 .sections p {
     line-height: 1.6; /* Mejora la legibilidad del texto */
+    font-family: 'Roboto', 'sans-serif',;
     font-size: 16px;
     padding: 20px;
     color: white;
+    position: relative;
 }
 .sections .Introduction{
     margin-right: 35px;
 }
 
+.sections .Introduction::after {
+    content: '';
+    height: 100%;
+    width: 100%;
+    top: 0%;
+    background-color: red;
+    
+}
+
 .Introduction p{
+    margin-top: 10px;
     border-radius: 10px;
     box-shadow: 0px 0px 20px #00000033;
 }
 
-.Introduction p::after{
+
+@property --angle{
+    syntax: "<angle>";
+    initial-value: 0deg;
+    inherits: false;
+}
+
+.sections .Introduction p::before, .sections .Introduction p::after{
     content: '';
     position: absolute;
-    background-color: red;
-    
-    top: 50%;
-    left:50%;
-    translate: -50% -50%;
+    background-image: conic-gradient(from var(--angle), #ff4545, #ff2994, #ff0095, #ec4f33de);
+    height: 99%;
+    width: 99.6%;
+    top: 0%;
+    left:0%;
+    z-index: -1;
+    padding: 3px;
+    border-radius: 10px;
+    animation: 3s spin linear infinite;
+
+}
+
+.sections .Introduction p::before{
+    filter: blur(1.5rem);
+    opacity: 0.5;
+}
+
+@keyframes spin{
+    from{
+        --angle: 0deg;
+    }
+    to{
+        --angle: 360deg;
+    }
 }
 
 .secondary-menu{
@@ -186,8 +219,6 @@ img:hover {
     margin-right: 10px;
 }
 
-
-
 footer {
     background-color: #9c05aa;
     color: white;
@@ -211,6 +242,17 @@ footer {
     nav ul li a {
         width: auto;
         padding: 10px 20px;
+    }
+    span{
+        animation: typing 3s steps(18,end), blink .5s infinite step-end alternate ;
+    }
+    @keyframes typing{
+        from{
+            width: 0;
+        }
+        to{
+            width: 15ch;
+        }
     }
 }
 
