@@ -1,1 +1,2 @@
 Añadiendo un nuevo archivo al repositorio remoto :D
+2do Cambio usando git diff.

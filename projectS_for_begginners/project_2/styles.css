@@ -1,0 +1,267 @@
+*{
+    padding: 0 ;
+    margin: 0;
+}
+
+
+html, body {
+    height: 100%;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+}
+
+body{
+    background: linear-gradient(to right,  #db0669c4, #f5c76491);
+}
+
+
+h1 {
+    font-family: 'Roboto', sans-serif;
+    text-align: center;
+    background-color: black;
+    color: white;
+    padding: 10px;
+    background: linear-gradient(to right,  #db0669d3, #f5c764cb);
+    
+}
+
+h2 {
+    text-align: center;
+    font-size: 30px;
+    font-family: 'Roboto', sans-serif;
+    padding: 20px;    
+    color: #f5c664;
+}
+
+span{
+    display: inline-block;
+    color: #b50556;
+    white-space: nowrap;
+    border-right: 4px solid;
+    width: 15ch;
+    overflow: hidden;
+    vertical-align: middle;
+    animation: typing 3s steps(18,end) infinite, blink .5s infinite step-end alternate ;
+    
+}
+
+@keyframes typing{
+    0%, 10%, 100%{
+        width: 0;
+    }
+    70%, 90%{
+        width: 15ch;
+    }
+}
+
+@keyframes blink{
+    50% {border-color: transparent;}
+}
+
+@keyframes erase {
+    0%, 50% {
+        width: 15ch;
+    }
+    100% {
+        width: 0;
+    }
+}
+
+nav ul{
+    /*width: 100%;*/
+    list-style-type: none;
+    text-align: center;
+    border: 4px solid #fffafaf6;
+    background: linear-gradient(to right,  #db0669d3, #f5c764cb);
+}
+
+nav ul li{
+    display: inline-flex;
+
+}
+
+nav ul li a {
+    text-decoration: none;
+    color: white;
+    width: 150px;
+    padding: 10px 0;
+    transition: color 0.3s ease, background-color 0.3s ease;
+}
+
+nav ul li a:hover {
+    color: #e9d8e9bb;
+    background-color: #962094;
+}
+
+
+img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 20%; /* Cambiar a un círculo completo */
+    object-fit: cover;
+    box-shadow: 0px 0px 10px #0000001a;
+    margin-right: 2rem;
+}
+
+img:hover {    
+    transform: scale(1.1); 
+    transition: transform 0.3s ease-in-out;
+    box-shadow: 0px 0px 20px #00000033;
+}
+
+.container {
+    display: flex;
+    flex: 1;
+    flex-wrap: wrap;  /* Permite que los elementos se envuelvan en múltiples líneas si es necesario */
+    margin: 50px auto;
+    max-width: 1200px;
+    padding: 10px; 
+    box-shadow: 0 8px 10px 10px #0000001a;
+    border-radius: 12px;
+    background: linear-gradient(to right,  #db0669d3, #f5c764cb);
+    
+}
+
+.sections {
+    display: flex;
+    flex-direction: column-reverse; /* Cambia el orden de los elementos para móviles */
+    align-items: center;
+    padding: 10px;
+    width: 100%;
+}
+
+.sections p {
+    line-height: 1.6; /* Mejora la legibilidad del texto */
+    font-family: 'Roboto', 'sans-serif',;
+    font-size: 16px;
+    padding: 20px;
+    color: white;
+    position: relative;
+}
+.sections .Introduction{
+    margin-right: 35px;
+}
+
+.sections .Introduction::after {
+    content: '';
+    height: 100%;
+    width: 100%;
+    top: 0%;
+    background-color: red;
+    
+}
+
+.Introduction p{
+    margin-top: 10px;
+    border-radius: 10px;
+    box-shadow: 0px 0px 20px #00000033;
+}
+
+
+@property --angle{
+    syntax: "<angle>";
+    initial-value: 0deg;
+    inherits: false;
+}
+
+.sections .Introduction p::before, .sections .Introduction p::after{
+    content: '';
+    position: absolute;
+    background-image: conic-gradient(from var(--angle), #ff4545, #ff2994, #ff0095, #ec4f33de);
+    height: 99%;
+    width: 99.6%;
+    top: 0%;
+    left:0%;
+    z-index: -1;
+    padding: 3px;
+    border-radius: 10px;
+    animation: 3s spin linear infinite;
+
+}
+
+.sections .Introduction p::before{
+    filter: blur(1.5rem);
+    opacity: 0.5;
+}
+
+@keyframes spin{
+    from{
+        --angle: 0deg;
+    }
+    to{
+        --angle: 360deg;
+    }
+}
+
+.secondary-menu{
+    display:flex;
+    padding-left: 20px;
+    width: 100%;
+    margin-top: 50px;
+}
+
+.secondary-menu a {
+    display: flex;
+    align-items: center;
+    color: white;
+    padding: 10px 20px;
+    margin-bottom: 15px;
+    border-radius: 50px;
+    background-color: #e4ccd75e;
+    transition: background-color 0.3s ease-in-out;
+}
+
+.secondary-menu a:hover {
+    background-color: #f5c664;
+}
+
+.secondary-menu i {
+    margin-right: 10px;
+}
+
+footer {
+    background-color: #9c05aa;
+    color: white;
+    text-align: center;
+    padding: 10px 0;
+    
+}
+
+
+@media (max-width: 768px) {
+    .container {
+        flex-direction: column;
+    }
+
+    .secondary-menu {
+        width: 100%;
+        margin-top: 20px;
+        padding: 0;
+    }
+
+    nav ul li a {
+        width: auto;
+        padding: 10px 20px;
+    }
+    span{
+        animation: typing 3s steps(18,end), blink .5s infinite step-end alternate ;
+    }
+    @keyframes typing{
+        from{
+            width: 0;
+        }
+        to{
+            width: 15ch;
+        }
+    }
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+.container {
+    animation: fadeIn 1s ease-in;
+}
