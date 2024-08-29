@@ -3,6 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Roboto:wght@200;700&display=swap">
     <link rel="stylesheet" href="styles.css">
     <title>DevFolio</title>
 </head>
@@ -11,17 +13,24 @@
         <h1 class="Tittle-Main">DevFolio</h1>
         <nav class="Nav-Main">
             <ul class="Lists">
-                <li ><a class="Home-A" href="#Section-Main">Home</a></li>
-                <li><a href="#">About</a></li>
-                <li><a href="#">Portfolio</a></li>
-                <li><a href="#">Contact</a></li>
+                <li ><a class="Home-A" href="#Section-Main">Inicio</a></li>
+                <li><a href="#">Sobre mi</a></li>
+                <li><a href="#">Portafolio</a></li>
+                <li><a href="#">Contacto</a></li>
             </ul>
         </nav>
+        <div class="bar-icon">
+            <input type="checkbox" id="check">
+            <label for="check" class="checkbtn">
+                <i id="Nav-Bar" class="fa-solid fa-bars"></i>
+            </label>
+        </div>
     </div>
     <section id="Section-Main">
-        <h1 class="My-Tittle">Soy Miguel Angel,</h1>
-        <span>Desarrollador Web</span>
+        <h1 class="My-Tittle">Soy Miguel Angel, <span>Desarrollador Web</span></h1>
+        <img src="img/FotoHojadeVida.png" alt="Imagen de perfil" class="Img-Main">
     </section>
     <section id="Section-AboutMe"></section>
+
 </body>
 </html>

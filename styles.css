@@ -16,9 +16,23 @@ body{
 }
 
 
+
+.checkbtn{
+    float:right;
+    line-height: 80px;
+    font-size: 25px;
+    cursor: pointer;
+    display: none;
+}
+
+#check{
+    display: none;
+}
+
+
 .Nav-Main{
     align-content:center;
-    margin-right: 15vh;
+    margin-right: 5vh;
 }
 .Lists li{
     display: inline-flex;
@@ -28,6 +42,7 @@ body{
     text-decoration: none;
     color: white;
     margin-left: 30px;
+    font-size: 18PX;
 }
 /*
 .Lists li .Home-A{
@@ -53,24 +68,169 @@ body{
 }
 
 #Section-Main{
-    background-color: rgb(128, 127, 126);
+    background-color: #070707;
     height: 500PX;
     color: #ffffff;
     display: flex; /* --> Convierte el contenido en un contenedor flex */
-    flex-direction: column; /* --> Alinea los elementos de arriba a abajo */
-    justify-content: center;  /* --> Centra verticalmente el contenido */
+    flex-direction:row; /* --> Alinea los elementos de arriba a abajo */
+    justify-content: space-around;
     align-items: center; /* --> Centro horizontalmente el contenido */
     text-align: center; /* --> Alinea el texto en el centro */
+    
 }
+
+.My-Tittle{
+    display: flex;
+    width: 320px;
+    height: auto;
+    font-size: 40px;
+    font-weight: bold;
+    margin-bottom: 50px;
+    justify-content: center;
+    flex-direction:column;
+    text-align: center;
+    
+}
+
+span{
+    display: inline-block;
+    color: #b50556;
+    white-space: nowrap;
+    border-right: 3px solid;
+    margin-left: 3px;
+    width: 17ch;
+    overflow: hidden;
+    animation: typing 3s steps(15) infinite, blink .5s infinite step-end alternate;
+}
+
+@keyframes typing{
+    0%, 10%, 100%{
+        width: 0;
+    }
+    70%, 90%{
+        width: 16.2ch;
+    }
+}
+
+@keyframes blink{
+    50% {border-color: transparent;}
+}
+
+@keyframes erase {
+    0%, 50% {
+        width: 17ch;
+    }
+    100% {
+        width: 0;
+    }
+}
+.Img-Main{
+    width: 300px;
+    height: auto;
+    border-radius: 45%;
+    margin-top: 50px;
+    margin-right: 100PX;
+    object-fit: cover;
+}
+
+.Img-Main:hover {    
+    transform: scale(1.1); 
+    transition: transform 0.3s ease-in-out;
+    box-shadow: 0px 0px 10px #fffefef6;
+}
+
 
 #Section-AboutMe{
     background-color: aquamarine;
     height: 500px;
 }
 
+.bar-icon{
+    display: none;
+}
 
 @media (max-width: 768px) {
-    .Nav-Main{
+    .Tittle-Main{
         display: none;
     }
+    #Section-Main{
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+    }
+    .My-Tittle{
+        width: auto;
+        height: auto;
+    }
+
+    .Img-Main{
+        display: none;
+    }
+    .My-Tittle{
+        align-items: center;
+        text-align: center;
+        margin: 0;
+    }
+    .bar-icon{
+        display: block;
+        width: 100%;
+        height: 100vh;
+        top: 80px;
+        left: 0;
+        text-align: end;
+        background: #070705;
+    }
+
+    .checkbtn{
+        display: block;
+        position: fixed;
+        top: 0;
+        right: 0;
+        cursor: pointer;
+        font-size: 30px;
+        width: 100%;
+        background-color: #b50556;
+    }
+
+    #Nav-Bar{
+        margin-right: 1.2rem;
+    }
+
+    .Nav-Main{
+        position: fixed;
+        width: 100%;
+        height: 30vh;
+    }
+    .Nav-Main ul{
+        position: fixed;
+        width: 100%;
+        height: 100vh;
+        padding: 0;
+        margin-top: 50px;
+        text-align: center;
+        align-items: center;
+    }
+
+    .Nav-Main ul li{
+        display: block;
+        margin-top: 80px;
+        text-align: center;
+    }
+    .Nav-Main ul li a{
+        font-size: 30px;
+    }
+    
+    span{
+        width: 16.2ch;
+        animation: typing 3s steps(15), blink .5s infinite step-end alternate;
+    }
+    @keyframes typing{
+        from{
+            width: 0;
+        }
+        to{
+            width: 16ch;
+        }
+    }
+    
 }
