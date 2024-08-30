@@ -11,26 +11,57 @@
 <body>
     <div class="Container-Nav">
         <h1 class="Tittle-Main">DevFolio</h1>
+        <input type="checkbox" id="check" class="check-toggle">
+        <label for="check" class="checkbtn">
+            <i id="Nav-Bar" class="fa-solid fa-bars"></i>
+        </label>
         <nav class="Nav-Main">
             <ul class="Lists">
-                <li ><a class="Home-A" href="#Section-Main">Inicio</a></li>
-                <li><a href="#">Sobre mi</a></li>
-                <li><a href="#">Portafolio</a></li>
-                <li><a href="#">Contacto</a></li>
+                    <li><a href="#Section-Main">Inicio</a></li>
+                    <li><a href="#Section-AboutMe">Sobre mi</a></li>
+                    <li><a href="#Portafolio">Portafolio</a></li>
+                    <li><a href="#Contacto">Contacto</a></li>
             </ul>
         </nav>
-        <div class="bar-icon">
-            <input type="checkbox" id="check">
-            <label for="check" class="checkbtn">
-                <i id="Nav-Bar" class="fa-solid fa-bars"></i>
-            </label>
-        </div>
     </div>
-    <section id="Section-Main">
+    <section id="Section-Main" class="scroll-section">
         <h1 class="My-Tittle">Soy Miguel Angel, <span>Desarrollador Web</span></h1>
         <img src="img/FotoHojadeVida.png" alt="Imagen de perfil" class="Img-Main">
     </section>
-    <section id="Section-AboutMe"></section>
+    <section id="Section-AboutMe"> 
+        <div class="Container-AboutMe">
+            <div class="Img-AboutMe">
+                <img src="img/IMG_MAIN.png" alt="Foto Miguel Angel mirando de frente">
+            </div>
+            <div class="About-Me">
+                <h2>Sobre mi</h2>
+                <p>
+                    Soy una persona a la que le gusta la programación y adquirir
+                    nuevos conocimientos constantemente. Espero aprender HTML y CSS de forma natural para enfrentar nuevos retos.
+                </p>
+                <ul>
+                    <li>Estudio de Ingeniería Electrónica</li>
+                    <li>Decimo semestre egresado en Tecnología en Automatización Industrial</li>
+                    <li>Fuerte enfoque en programación y desarrollo de software</li>
+                </ul>
+            </div>
+        </div>
+    </section>
+    <section id="Portafolio"></section>
+    <section id="Contacto"></section>
 
+    <script>
+        // Seleccionamos todos los enlaces de la barra de navegación
+        const navLinks = document.querySelectorAll('.Nav-Main a');
+        console.log(navLinks);
+        // Añadimos un evento a cada enlace
+        navLinks.forEach(link => {
+            link.addEventListener('click', () => {
+                // Desmarcar el checkbox para cerrar el menú
+                document.getElementById('check').checked = false;
+            });
+        });
+    </script>
+    
 </body>
 </html>
