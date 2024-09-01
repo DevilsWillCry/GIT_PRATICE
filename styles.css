@@ -76,7 +76,6 @@ html {
 }
 
 .My-Tittle {
-    
     display: flex;
     width: 50vw;
     height: auto;
@@ -85,7 +84,6 @@ html {
     justify-content: center;
     flex-direction: column;
     align-items: start;
-    
 }
 
 .My-Tittle span {
@@ -96,7 +94,7 @@ html {
     width: 100%;
     max-width: 14.55ch;
     overflow: hidden;
-    animation: typing 3s steps(14.55) infinite, blink .5s infinite step-end alternate;
+    animation: typing 4s steps(15, end) infinite, blink 0.5s infinite step-end alternate;
 }
 
 
@@ -201,7 +199,7 @@ html {
 }
 
 .Container-Icons i{
-    font-size: 3.5vw;
+    font-size: 3vw;
     width: 100%;
 }
 
@@ -210,11 +208,23 @@ html {
 }
 
 .Contact-Info{
-    display: grid;
-    align-items: center;
-    text-align: center;
-    grid-template-columns: repeat(2, 1fr);
-    grid-gap: 1vw;
+    display: flex;
+    flex-direction: row;
+    justify-content:space-evenly;
+    margin-left: 20px;
+}
+
+
+.Contact-Info p {
+    font-size: 1.5vw;
+    margin-right: 30px;    
+}
+
+.Contact-Info p a i{
+    margin-right: 10px;
+    color: #070707;
+    font-size: 2.4vw;
+
 }
 
 /* Menu Responsive */
@@ -303,6 +313,18 @@ html {
     .Container-AboutMe .Container-Icons h3{
         font-size: 20px;
     }
+
+    .Container-AboutMe .Contact-Info {
+        display: grid;
+        gap: 10px;
+        grid-template-columns: repeat(3, 1fr);
+        grid-auto-rows: minmax(10px, auto);
+        width: 100%;
+    }
+
+    .Container-AboutMe .Contact-Info p a i{
+        font-size: 30px;
+    }
     
     .checkbtn {
         display: block;
@@ -388,5 +410,11 @@ html {
         .Container-AboutMe .Container-Icons{
             grid-template-columns: repeat(1, 1fr);
         }
+        .Container-AboutMe .Contact-Info{
+            grid-template-columns: repeat(1, 1fr);
+            align-items: center;
+            text-align: center;
+        }
     }
+
 /*--------------------------RESPONSIVE--------------------------*/
