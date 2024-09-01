@@ -19,7 +19,7 @@
             <ul class="Lists">
                     <li><a href="#Section-Main">Inicio</a></li>
                     <li><a href="#Section-AboutMe">Sobre mi</a></li>
-                    <li><a href="#Portafolio">Portafolio</a></li>
+                    <li><a href="#Section-Experience-Education">Experiencia</a></li>
                     <li><a href="#Contacto">Contacto</a></li>
             </ul>
         </nav>
@@ -80,63 +80,59 @@
                         <h3>Bases de Datos</h3>
                     </div>                                                                              
                 </div>
-                <div class="Container-Info">
-                    <h2>Contacto</h2>
-                    <div class="Contact-Info">
-                        <p ><a href="https://github.com/DevilsWillCry" target="_blank"><i class="fa-brands fa-github"></i></a></p>
-                        <p><a href="https://www.linkedin.com/in/miguel-angel-me%C3%B1aca-coral-037b06213/" target="_blank"><i class="fa-brands fa-linkedin"></i></a></p>
-                        <p><a href="mailto:miguel.menaca01@gmail.com"><i class="fa-solid fa-paper-plane"></i></a></p>
-                    </div>
+                <h2>Contacto</h2>
+                <div class="Contact-Info">
+                    <p ><a href="https://github.com/DevilsWillCry" target="_blank"><i class="fa-brands fa-github"></i></a></p>
+                    <p><a href="https://www.linkedin.com/in/miguel-angel-me%C3%B1aca-coral-037b06213/" target="_blank"><i class="fa-brands fa-linkedin"></i></a></p>
+                    <p><a href="mailto:miguel.menaca01@gmail.com"><i class="fa-solid fa-paper-plane"></i></a></p>
                 </div>
         </div>
     </section>
-    <section id="Portafolio">
-        <div class="My-Projects">
+    <section id="Section-Experience-Education">
+        <div class="Container-Experience">
+            <div class="Container-Cards">
+                <h2>Experiencia</h2>
+                <div class="Card">
+                    <h3>Mantenimiento, Bodega y administración</h3>
+                    <p><i>Feb.2019 - Feb. 2020</i></p>
+                    <ul>
+                        <li>Realice mantenimiento preventivo a las máquinas de las 3
+                            plantas con el fin de un proceso óptimo.</li>
+                        <li>Gestione y organice los documentos de la parte administrativa
+                            de mantenimiento</li>
+                    </ul>
+                </div>
+                <div class="Card">
+                    <h3>Desarrollo de Software para el Seguimiento de Asesorías de Ejercicio</h3>
+                    <p><i>Febrero 2024 - Agotos 2024</i></p>
+                    <p>Desarrollé una aplicación de escritorio para gestionar y realizar un seguimiento efectivo 
+                        de las asesorías de ejercicio utilizando <strong>Python <i class="fab fa-python"></i></strong>, empleando 
+                        la <strong>API</strong> de <strong>Google Sheets <i class="fa-solid fa-table"></i></strong> para la gestión 
+                        y almacenamiento de datos.
+                    </p>
+                </div>
+            </div>
+        </div>
+        <div class="Container-Education">
+            <h2>Educación</h1>
+            <div class="Container-Cards">
+                <div class="Card">
+                    <h3>Ingeniería Electrónica</h3>
+                    <p><i>Febrero 2020 - Actual</i></p>
+                    <p>Pregrado en Ingeniería Electrónica, Actualmente estudiando decimó semestre en la 
+                        <strong>Universidad Santiago de Cali <i class="fa-solid fa-school"></i></strong>.</p>
+                </div>
+                <div class="Card">
+                    <h3>Tecnología en Automatización Industrial</h3>
+                    <p><i>Julio 2017 - Enero 2019</i></p>
+                    <p>Realicé una Tecnología en Automatización Industrial, en el 
+                        <strong>Servicio Nacional de Aprendizaje <i class="fa-solid fa-school"></i></strong>
+                        en el <strong>Centro de Electricidad y Automatización Industrial</strong>.
+                    </p>                    
+                </div>
+            </div>
         </div>
     </section>
     <section id="Contacto"></section>
-
-    <script>
-        // Seleccionamos todos los enlaces de la barra de navegación
-        const navLinks = document.querySelectorAll('.Nav-Main a');
-        // Añadimos un evento a cada enlace
-        navLinks.forEach(link => {
-            link.addEventListener('click', () => {
-                // Desmarcar el checkbox para cerrar el menú
-                document.getElementById('check').checked = false;
-            });
-        });
-    </script>
-
-    <script>
-                // Seleccionamos el checkbox, los enlaces de navegación y el h2
-        const checkbox = document.getElementById('check');
-        const heading = document.querySelector('.About-Me h2');
-
-        // Función para mostrar u ocultar el h2
-        function toggleHeadingVisibility() {
-            if (checkbox.checked) {
-                // Si el menú está desplegado, ocultamos el h2
-                heading.classList.add('hidden-heading');
-            } else {
-                // Si el menú está cerrado, mostramos el h2
-                heading.classList.remove('hidden-heading');
-            }
-        }
-
-        // Añadir evento de clic a cada enlace de navegación
-        navLinks.forEach(link => {
-            link.addEventListener('click', () => {
-                // Desmarcar el checkbox para cerrar el menú
-                checkbox.checked = false;
-                // Asegurarnos de mostrar el h2 cuando se cierra el menú
-                toggleHeadingVisibility();
-            });
-        });
-
-        // Añadir evento de cambio al checkbox para controlar la visibilidad del h2
-        checkbox.addEventListener('change', toggleHeadingVisibility);
-
-    </script>
 </body>
 </html>
