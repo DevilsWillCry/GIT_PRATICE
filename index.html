@@ -4,14 +4,14 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Roboto:wght@200;700&display=swap">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Roboto">
     <link rel="stylesheet" href="styles.css">
     <title>DevFolio</title>
 </head>
 <body>
     <div class="Container-Nav">
         <h1 class="Tittle-Main">DevFolio</h1>
-        <input type="checkbox" id="check" class="check-toggle">
+        <input type="checkbox" id="check" >
         <label for="check" class="checkbtn">
             <i id="Nav-Bar" class="fa-solid fa-bars"></i>
         </label>
@@ -26,11 +26,11 @@
     </div>
     
     <section id="Section-Main" class="scroll-section">
-        <h1 class="My-Tittle">Soy Miguel Angel, <span>Desarrollador Web</span></h1>
+        <h1 class="My-Tittle">Soy Miguel Angel<span>Desarrollador Web</span></h1>
         <img src="img/IMG_MAIN_NO_BACKGROUND.png" alt="Imagen de perfil" class="Img-Main">
     </section>
 
-    <section id="Section-AboutMe"> 
+    <section id="Section-AboutMe" class="scroll-section"> 
         <div class="Container-AboutMe">
             <div class="Img-AboutMe">
                 <img src="img/IMG_MAIN.png" alt="Foto Miguel Angel mirando de frente">
@@ -38,25 +38,67 @@
             <div class="About-Me">
                 <h2>Sobre mi</h2>
                 <p>
-                    Soy una persona a la que le gusta la programación y adquirir
-                    nuevos conocimientos constantemente. Espero aprender HTML y CSS de forma natural para enfrentar nuevos retos.
+                    Soy estudiante de <strong>Ingeniería Electrónica</strong> en décimo semestre y egresado en <strong>Tecnología en Automatización Industrial</strong>,
+                    con una sólida orientación hacia la <strong>programación</strong>. Mi formación técnica en electrónica y automatización se 
+                    complementa con un profundo interés y creciente experiencia en el desarrollo de software. 
+                    Mi pasión por la programación se centra en el uso de tecnologías como <strong>Python <i class="fab fa-python"></i></strong>, 
+                    <strong>Java <i class="fab fa-java"></i></strong>, <strong>JavaScript <i class="fab fa-js"></i></strong> y <strong>sistemas de control de versiones</strong> como <strong>Git <i class="fab fa-git-alt"></i></strong>,
+                    así como en el diseño y gestión de <strong>bases de datos <i class=" fa-solid fa-database"></i></strong>. Estoy motivado por la resolución de problemas complejos y el diseño de soluciones innovadoras que 
+                    integran tecnología avanzada y automatización. Busco oportunidades para aplicar mis habilidades en 
+                    estos campos y seguir desarrollándome en un entorno profesional desafiante. Estoy comprometido con 
+                    crecer tanto en el ámbito técnico como en el personal, y contribuir al éxito de proyectos que impulsen 
+                    el avance tecnológico.
                 </p>
-                <ul>
-                    <li>Estudio de Ingeniería Electrónica</li>
-                    <li>Decimo semestre egresado en Tecnología en Automatización Industrial</li>
-                    <li>Fuerte enfoque en programación y desarrollo de software</li>
-                </ul>
-                <p class="Tecnologias">xd</p>
-            </div>
+                <h2>Tecnologías</h2>
+                <div class="Container-Icons">
+                    <div class="Container-HTML">
+                        <i class="fab fa-html5"></i>
+                        <h3>HTML</h3>
+                    </div>
+                    <div class="Container-CSS">
+                        <i class="fab fa-css3-alt"></i>
+                        <h3>CSS</h3>
+                    </div>
+                    <div class="Container-JS">
+                        <i class="fab fa-js"></i>
+                        <h3>JavaScript</h3>
+                    </div>
+                    <div class="Container-PYTHON">
+                        <i class="fab fa-python"></i>
+                        <h3>Python</h3>
+                    </div>
+                    <div class="Container-JAVA">
+                        <i class="fab fa-java"></i>
+                        <h3>Java</h3>
+                    </div>
+                    <div class="Container-GIT">
+                        <i class="fab fa-git-alt"></i>
+                        <h3>Git</h3>
+                    </div>
+                    <div class="Containe-DB">
+                        <i class="fa-solid fa-database"></i>
+                        <h3>Bases de Datos</h3>
+                    </div>
+                </div>
+
+                <div class="Container-Info">
+                    <h2>Contacto</h2>
+                    <div class="Contact-Info">
+                        <p>Email: <a href="mailto:miguel.menaca01@gmail.com">miguel.menaca01@gmail.com</a></p>
+                        <p>Teléfono: (+57) 317 846 5152</p>
+
+                </div>
         </div>
     </section>
-    <section id="Portafolio"></section>
+    <section id="Portafolio">
+        <div class="My-Projects">
+        </div>
+    </section>
     <section id="Contacto"></section>
 
     <script>
         // Seleccionamos todos los enlaces de la barra de navegación
         const navLinks = document.querySelectorAll('.Nav-Main a');
-        console.log(navLinks);
         // Añadimos un evento a cada enlace
         navLinks.forEach(link => {
             link.addEventListener('click', () => {
@@ -65,6 +107,36 @@
             });
         });
     </script>
-    
+
+    <script>
+                // Seleccionamos el checkbox, los enlaces de navegación y el h2
+        const checkbox = document.getElementById('check');
+        const heading = document.querySelector('.About-Me h2');
+
+        // Función para mostrar u ocultar el h2
+        function toggleHeadingVisibility() {
+            if (checkbox.checked) {
+                // Si el menú está desplegado, ocultamos el h2
+                heading.classList.add('hidden-heading');
+            } else {
+                // Si el menú está cerrado, mostramos el h2
+                heading.classList.remove('hidden-heading');
+            }
+        }
+
+        // Añadir evento de clic a cada enlace de navegación
+        navLinks.forEach(link => {
+            link.addEventListener('click', () => {
+                // Desmarcar el checkbox para cerrar el menú
+                checkbox.checked = false;
+                // Asegurarnos de mostrar el h2 cuando se cierra el menú
+                toggleHeadingVisibility();
+            });
+        });
+
+        // Añadir evento de cambio al checkbox para controlar la visibilidad del h2
+        checkbox.addEventListener('change', toggleHeadingVisibility);
+
+    </script>
 </body>
 </html>

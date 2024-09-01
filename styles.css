@@ -2,6 +2,8 @@ body {
     background-color: #070707;
     margin: 0;
     padding: 0;
+    display: flex;
+    flex-direction: column;
 }
 
 html {
@@ -10,7 +12,7 @@ html {
 
 
 * {
-    font-family: 'Roboto', sans-serif;
+    font-family: 'Roboto','sans-serif';
 }
 
 .Container-Nav {
@@ -91,10 +93,10 @@ html {
     color: #b50556;
     white-space: nowrap;
     border-right: 3px solid;
-    width: 100%; /* Ajustar a todo el ancho disponible */
-    max-width: 14.5ch; /* Limitar el ancho máximo a 14 caracteres */
+    width: 100%;
+    max-width: 14.55ch;
     overflow: hidden;
-    animation: typing 3s steps(14) infinite, blink .5s infinite step-end alternate;
+    animation: typing 3s steps(14.55) infinite, blink .5s infinite step-end alternate;
 }
 
 
@@ -103,7 +105,7 @@ html {
         width: 0;
     }
     70%, 90% {
-        width: 14.45ch;
+        width: 14.55ch;
     }
 }
 
@@ -112,13 +114,14 @@ html {
 }
 
 
+
 .Img-Main {
     width: 25%;
     height: auto;
     border-radius: 20%;
     margin-top: 50px;
     object-fit: cover;
-    box-shadow: 0 0px 5px #fffcfce8;
+    box-shadow: 0 0px 5px #b6b1b1;
 }
 
 .Img-Main:hover {    
@@ -126,8 +129,6 @@ html {
     transition: transform 0.2s ease-in-out;
     box-shadow: 0px 0px 10px #fffcfce8;
 }
-
-
 
 #Section-AboutMe {
     display: flex;
@@ -140,16 +141,38 @@ html {
 
 .Container-AboutMe{
     display: flex;
-    flex-direction: row;
+    flex-direction:row;
+    margin-top: 4rem;
     padding: 30px;
-    margin-top: 70px;
-    width: 80%;
+    width: 90%;
     height: 70%;
     box-shadow: 0 8px 10px 10px #0000001a;
 }
 
 .About-Me {
-    margin-left: 30px;
+    width: 100%;
+    overflow: auto;
+    margin-left: 20px;
+}
+
+.About-Me h2{
+    position: relative;
+}
+
+.About-Me h2:after {
+    content: "";
+    background: #b50556;
+    position: absolute;
+    bottom: 0;
+    left:0;
+    height: 12%;
+    width: 7vh;
+}
+
+.About-Me p{
+    line-height: 2;
+    margin-bottom: 30px;
+    
 }
 
 .Img-AboutMe{
@@ -169,6 +192,31 @@ html {
     margin-right: 10px;
 }
 
+.Container-Icons{
+    display: flex;
+    justify-content: space-evenly;
+    flex-direction: row;
+    text-align: center;
+    align-items: center;;
+}
+
+.Container-Icons i{
+    font-size: 3.5vw;
+    width: 100%;
+}
+
+.Container-Icons h3{
+    font-size: 1.5vw;
+}
+
+.Contact-Info{
+    display: grid;
+    align-items: center;
+    text-align: center;
+    grid-template-columns: repeat(2, 1fr);
+    grid-gap: 1vw;
+}
+
 /* Menu Responsive */
 .bar-icon {
     display: none;
@@ -176,8 +224,12 @@ html {
 
 
 #Portafolio{
-    background-color: red;
-    height: 100vh;
+    background-color: rgba(243, 116, 116, 0.719);
+    width: 100%;
+}
+
+.hidden-heading {
+    visibility: hidden;
 }
 
 /*--------------------------RESPONSIVE--------------------------*/
@@ -186,7 +238,7 @@ html {
     .Tittle-Main {
         display: none;
     }
-    
+
     #Section-Main {
         flex-direction: column;
         align-items: center;
@@ -215,16 +267,19 @@ html {
     .Container-AboutMe{
         flex-direction: column;
         align-items: center;
-        max-width: 70%;
+        max-width: 75%;
         max-height: auto;
-        margin-top: 20px;
+        margin-top: 45px;
     }
     
     .About-Me{
         height: 50%;
         overflow: auto;
+        margin-left: 0px;
+        padding: 30px;
     }
     
+
     .Img-AboutMe{
         height: 100%;
         max-width: 50%;
@@ -235,6 +290,19 @@ html {
         width: 100%;
     }
     
+    .Container-AboutMe .Container-Icons{
+        display: grid;
+        gap: 10px;
+        grid-template-columns: repeat(3, 1fr);
+        grid-auto-rows: minmax(10px, auto);
+    }
+
+    .Container-AboutMe .Container-Icons i{
+        font-size: 50px;
+    }
+    .Container-AboutMe .Container-Icons h3{
+        font-size: 20px;
+    }
     
     .checkbtn {
         display: block;
@@ -245,7 +313,6 @@ html {
         background-color: #b50556;
         font-size: 45px;
         width: 100%;
-        
     }
     
     #Nav-Bar {
@@ -285,21 +352,20 @@ html {
         font-size: 5vh;
         
     }
-    
-    #check:checked ~ .Nav-Main {
-        left: 0;
-    }
-    
-    #check:checked ~ .Nav-Main .Lists li a {
-        background-color: transparent;
-        transition: background-color 0.3s;
-    }
-    
+
     /* Al hacer clic en un enlace, ocultar el menú desmarcando el checkbox */
     .Nav-Main a {
         display: block;
         text-align: center;
         line-height: 60px;
+    }
+
+    #check:checked ~ .Nav-Main {
+        left: 0;
+    }
+
+    #check:checked ~ .Nav-Main .Lists li a {
+        transition: background-color 0.3s;
     }
     
     #check:checked ~ .Nav-Main .Lists li a:active ~ #check {
@@ -313,9 +379,14 @@ html {
 }
 
 /*--------------------------RESPONSIVE--------------------------*/
-@media (max-width: 450px) {
+
+
+@media (max-width: 300px) {
         .Img-AboutMe{
             max-width: 100%;
+        }
+        .Container-AboutMe .Container-Icons{
+            grid-template-columns: repeat(1, 1fr);
         }
     }
 /*--------------------------RESPONSIVE--------------------------*/
