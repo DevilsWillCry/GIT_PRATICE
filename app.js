@@ -8,8 +8,6 @@ navLinks.forEach(link => {
     });
 });
 
-
-
 // Seleccionamos el checkbox, los enlaces de navegación y el h2
 const checkbox = document.getElementById('check');
 /*const heading = document.querySelector('.About-Me h2'); -> Toma solo la primera ocurrencia*/ 
@@ -41,3 +39,4 @@ navLinks.forEach(link => {
 
 // Añadir evento de cambio al checkbox para controlar la visibilidad del h2
 checkbox.addEventListener('change', toggleHeadingVisibility);
+
