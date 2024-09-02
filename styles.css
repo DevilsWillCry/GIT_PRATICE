@@ -135,8 +135,8 @@ html {
     align-items: center;
     background-color: #ffffff;
     height: 100vh;
-
 }
+
 
 .Container-AboutMe{
     display: flex;
@@ -249,7 +249,7 @@ h2:after {
 }
 .Container-Experience .Card, .Container-Education .Card{
     border-left: 5px solid #b50556;
-    padding: 30px;
+    padding: 10px;
     margin: 30px;
     transition: all .5s;
 }
@@ -257,7 +257,6 @@ h2:after {
 .Container-Experience .Card:hover, .Container-Education .Card:hover{
     transform: scale(1.1); 
     overflow: auto;
-    transition: transform 0.2s ease-in-out;
     box-shadow: 0px 0px 10px #070705;
 
 }
@@ -278,6 +277,31 @@ h2:after {
 .hidden-heading {
     visibility: hidden;
 }
+
+#Section-Contacto{
+    height: 100vh;
+}
+
+
+.arrow-up{
+    position: fixed;
+    bottom: 20px;
+    right: 40px;
+    z-index: 99;
+    font-size: 20px;
+    cursor: pointer;
+}
+
+.arrow-up a i{
+    color: #b50556;
+    font-size: 30px;
+    transition: all 0.5s;
+}
+
+.arrow-up .at-top i{
+    transform: rotate(180deg);
+}
+
 
 /*--------------------------RESPONSIVE--------------------------*/
 
@@ -444,7 +468,7 @@ h2:after {
     #check:not(:checked) ~ .Nav-Main ul {
         display: none;
     }
-    
+
 }
 
 /*--------------------------RESPONSIVE--------------------------*/
@@ -472,13 +496,23 @@ h2:after {
         }
         
         .Container-Experience .Card, .Container-Education .Card{
-            border: 0px solid #ffffff;
+            border-left: 3px solid #b50556;
             margin-left: 0;
+            padding: 5px;
         }
-        
+
+        .Container-Experience .Card ul, .Container-Education .Card ul{
+            padding: 10px;
+            margin-left: 10PX;
+        }
+
         .Container-Experience .Card:hover, .Container-Education .Card:hover{
             transform: scale(1);
-            box-shadow: none;
+            
+        }
+        .Lists li a {
+            font-size: 3.2vh;
+            
         }
     }
 

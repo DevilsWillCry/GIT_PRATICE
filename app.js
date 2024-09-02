@@ -8,6 +8,51 @@ navLinks.forEach(link => {
     });
 });
 
+// Selecciona el elemento que deseas modificar o mostrar cuando estés en el inicio de la página
+const myElement = document.querySelector('.arrow-up a'); // Cambia '.my-element' por el selector adecuado
+// Define el nuevo valor para el atributo href cuando el usuario esté en el inicio
+const newHrefUp = '#Section-Contacto'; // Cambia esto al URL deseado
+// Función que se ejecuta cuando el usuario hace scroll
+function checkScrollPosition() {
+    if (window.scrollY === 0) {
+        // El usuario está en el inicio de la página
+        myElement.classList.add('at-top');
+        myElement.href = newHrefUp;
+        console.log('Estás en el inicio de la página.');
+    } else {
+        // El usuario ha desplazado hacia abajo
+        myElement.classList.remove('at-top');
+        myElement.href = '#'; // Quita el enlace cuando el usuario no está en el inicio
+        console.log('Has desplazado hacia abajo.');
+    }
+}
+// Agrega el evento de scroll al objeto window
+window.addEventListener('scroll', checkScrollPosition);
+
+// Llama a la función al cargar la página para establecer el estado inicial
+checkScrollPosition();
+
+
+
+// Detecta el desplazamiento y agrega la clase 'visible'
+function checkVisibility() {
+    const sections = document.querySelectorAll('.section');
+    sections.forEach(section => {
+        const rect = section.getBoundingClientRect();
+        if (rect.top < window.innerHeight && rect.bottom >= 0) {
+            section.classList.add('visible');
+        } else {
+            section.classList.remove('visible');
+        }
+    });
+}
+
+// Agrega el evento de scroll
+window.addEventListener('scroll', checkVisibility);
+// Llama a la función para verificar al cargar la página
+checkVisibility();
+
+
 // Seleccionamos el checkbox, los enlaces de navegación y el h2
 const checkbox = document.getElementById('check');
 /*const heading = document.querySelector('.About-Me h2'); -> Toma solo la primera ocurrencia*/ 
