@@ -85,3 +85,37 @@ navLinks.forEach(link => {
 // Añadir evento de cambio al checkbox para controlar la visibilidad del h2
 checkbox.addEventListener('change', toggleHeadingVisibility);
 
+
+window.addEventListener('scroll',reveal);
+
+function reveal(){
+    var reveals = document.querySelectorAll('.Reveal');
+    for(var i=0; i<reveals.length; i++) {
+        var windoHeight = window.innerHeight
+        var revealTop = reveals[i].getBoundingClientRect().top;
+        var revealPoint = 80;
+        //var revealPoint = windowHeight - (revealTop / 3);
+
+        if(revealTop < windoHeight - revealPoint) {
+            reveals[i].classList.add('visible');
+        } else {
+            reveals[i].classList.remove('visible');
+        }
+    }
+}
+
+
+window.onload = function () {
+    window.scrollTo(0, 0);
+};
+
+
+const element = document.getElementsByClassName('arrow-up')[0];
+element.addEventListener('mouseover', () => {
+    // Code to execute when the mouse is over the element
+    element.classList.add('overArrowUp');
+});
+element.addEventListener('mouseout', () => {
+    // Code to execute when the mouse leaves the element
+    element.classList.remove('overArrowUp');
+});
