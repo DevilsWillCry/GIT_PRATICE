@@ -41,7 +41,7 @@ html {
 
 .Nav-Main {
     align-content: center;
-    margin-right: 5vh;
+    margin-right: 3vh;
 }
 
 .Lists li {
@@ -129,12 +129,14 @@ html {
     box-shadow: 0px 0px 10px #fffcfce8;
 }
 
+/* ---------------------------------------------------- SECCIÓN SOBRE MI ----------------------------------------- */
+
 #Section-AboutMe {
     display: flex;
     justify-content: center;
     align-items: center;
     background-color: #ffffff;
-    height: 100vh;
+    height: auto;
 }
 
 
@@ -150,12 +152,13 @@ html {
 
 .About-Me {
     width: 100%;
-    overflow: auto;
     margin-left: 20px;
+    margin-top: 35px;
 }
 
 h2{
     position: relative;
+    font-size: 30px;
 }
 
 h2:after {
@@ -171,6 +174,8 @@ h2:after {
 .About-Me p{
     line-height: 2;
     margin-bottom: 30px;
+    font-size: 1.2vw;
+    justify-content: center;
     
 }
 
@@ -178,7 +183,7 @@ h2:after {
     display: block;
     text-align: center;
     max-width: 100%;
-    height: 100%;
+    max-height: 100%;
     background-color: #b50556;
     border-radius: 12%;
     box-shadow: 0 8px 10px 10px #0000001a;
@@ -205,7 +210,7 @@ h2:after {
 }
 
 .Container-Icons h3{
-    font-size: 1.5vw;
+    font-size: 1vw;
 }
 
 .Contact-Info{
@@ -227,13 +232,14 @@ h2:after {
     font-size: 2.4vw;
 
 }
+/* ------------------------------------------------------------------------------------------------------------------------- */
 
 /* Menu Responsive */
 .bar-icon {
     display: none;
 }
 
-
+/* ---------------------------------------------------- SECCIÓN EXPERIENCIA ------------------------------------------------------------ */
 #Section-Experience-Education{
     background-color: #ffffff;
     display: grid;
@@ -258,7 +264,6 @@ h2:after {
     transform: scale(1.1); 
     overflow: auto;
     box-shadow: 0px 0px 10px #070705;
-
 }
 
 .Container-Cards .Card h2{
@@ -277,11 +282,47 @@ h2:after {
 .hidden-heading {
     visibility: hidden;
 }
+/* -------------------------------------------------------------------------------------------------------------------------------------- */
+/* ---------------------------------------------------- SECCIÓN PROYECTOS --------------------------------------------------------------- */
 
 #Section-Projects{
     background-color: #ffffff;
+
 }
 
+#Section-Projects .Container-Projects{
+    margin-top: 80px;
+    padding: 30px;
+}
+
+#Section-Projects .Container-Projects .Container-Cards{
+    display: grid;
+    gap: 30px;
+    grid-template-columns: repeat(3,1fr);
+    font-size: 1.5VW;
+}
+
+
+#Section-Projects .Container-Cards .Card a img{
+    width: 100%;
+    height: auto;
+    align-items: center;
+    text-align: center;
+    transition: all 0.5s;
+}
+
+#Section-Projects .Container-Cards .Card a img:hover{
+    transform: scale(1.1);
+    box-shadow: 0px 0px 10px #070705;
+}
+
+#Section-Projects .Container-Cards .Card h3{
+    text-align: center;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+/* ----------------------------------------------------------------------------------------------------------------------------------------*/
 
 #Section-Contact{
     height: 100vh;
@@ -388,6 +429,11 @@ section {
     }
     
 
+    .About-Me p{
+        font-size: 2vw;
+    }
+
+
     .Img-AboutMe{
         height: 100%;
         max-width: 50%;
@@ -433,6 +479,20 @@ section {
     #Section-Experience-Education .Container-Cards{
         font-size: 15px;
     }
+
+    #Section-Projects .Container-Projects .Container-Cards{
+        grid-template-columns: repeat(2, 1fr);
+        grid-auto-rows: minmax(10px, auto);
+    }
+
+    #Section-Projects .Container-Projects .Container-Cards{
+        font-size: 15px;
+    }
+
+    #Section-Projects .Container-Projects{
+        margin-top: 20px;
+    }
+
 
     .checkbtn {
         display: block;
@@ -514,17 +574,21 @@ section {
 /*--------------------------RESPONSIVE--------------------------*/
 
 
-@media (max-width: 300px) {
+@media (max-width: 400px) {
         .Img-AboutMe{
             max-width: 100%;
         }
         .Container-AboutMe .Container-Icons{
-            grid-template-columns: repeat(1, 1fr);
+            grid-template-columns: repeat(2, 1fr);
         }
         .Container-AboutMe .Contact-Info{
-            grid-template-columns: repeat(1, 1fr);
+            grid-template-columns: repeat(2, 1fr);
             align-items: center;
             text-align: center;
+        }
+
+        .About-Me p{
+                font-size: 20px;
         }
         
         #Section-Experience-Education{
@@ -550,6 +614,13 @@ section {
             transform: scale(1);
             
         }
+
+        #Section-Projects .Container-Projects .Container-Cards{
+            grid-template-columns: repeat(1, 1fr);
+            grid-auto-rows: minmax(10px, auto);
+        }
+
+
         .Lists li a {
             font-size: 3.2vh;
             
