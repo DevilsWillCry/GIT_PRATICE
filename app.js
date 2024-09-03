@@ -11,7 +11,7 @@ navLinks.forEach(link => {
 // Selecciona el elemento que deseas modificar o mostrar cuando estés en el inicio de la página
 const myElement = document.querySelector('.arrow-up a'); // Cambia '.my-element' por el selector adecuado
 // Define el nuevo valor para el atributo href cuando el usuario esté en el inicio
-const newHrefUp = '#Section-Contacto'; // Cambia esto al URL deseado
+const newHrefUp = '#Section-Contact'; // Cambia esto al URL deseado
 // Función que se ejecuta cuando el usuario hace scroll
 function checkScrollPosition() {
     if (window.scrollY === 0) {
@@ -81,7 +81,6 @@ navLinks.forEach(link => {
         toggleHeadingVisibility();
     });
 });
-
 // Añadir evento de cambio al checkbox para controlar la visibilidad del h2
 checkbox.addEventListener('change', toggleHeadingVisibility);
 
@@ -104,11 +103,11 @@ function reveal(){
     }
 }
 
-
+/*
 window.onload = function () {
     window.scrollTo(0, 0);
 };
-
+*/
 
 const element = document.getElementsByClassName('arrow-up')[0];
 element.addEventListener('mouseover', () => {

@@ -115,7 +115,7 @@ html {
 
 
 .Img-Main {
-    width: 25%;
+    max-width: 30vw;
     height: 65%;
     border-radius: 20%;
     margin-top: 50px;
@@ -278,7 +278,12 @@ h2:after {
     visibility: hidden;
 }
 
-#Section-Contacto{
+#Section-Projects{
+    background-color: #ffffff;
+}
+
+
+#Section-Contact{
     height: 100vh;
 }
 
