@@ -325,9 +325,77 @@ h2:after {
 /* ----------------------------------------------------------------------------------------------------------------------------------------*/
 
 #Section-Contact{
+    background-color: #070705;
+    align-content: center;
+    text-align: center;
     height: 100vh;
+    color: white;
 }
 
+#Section-Contact h2{
+    display: inline;
+}
+
+#Section-Contact .Container-Form{
+    display: grid;
+    max-width: 1000px;
+    gap: 10px;
+    grid-auto-columns: 10px;
+    padding: 30px;
+    margin: 0 auto;
+    grid-template-columns: repeat(2, 1fr);
+    align-items: center;
+    align-content: center;
+    vertical-align: middle;
+    
+}
+
+
+.Container-Form input, .Container-Form textarea{
+    padding: 10px;
+    font-size: 16px;
+    border: 2px solid #ccc;
+    border-radius: 10px;
+
+}
+
+#Section-Contact .Container-Form .Subject-Form { /* Aplica a "Subject" */
+    grid-column: span 2;
+}
+
+.Container-Form textarea{
+    grid-column: span 2;
+    resize: none;
+    height: 150px;
+}
+
+.Container-Form button{
+    grid-column: span 2;
+    width: 50%;
+    margin: 0 auto;
+    padding: 10px;
+    font-size: 18px;
+    background-color: #b50556;
+    color: white;
+    border: none;
+    border-radius: 30px;
+    cursor: pointer;
+    transition: all 0.5s;
+}
+
+
+
+.Container-Form button:hover{
+    transform: scale(1.1,1.1);
+    background-color: #930648;
+    color: white;
+    box-shadow: 0 8px 5px 5px #0000001a;
+}
+
+
+footer{
+    background-color:aqua;
+}
 
 .arrow-up{
     position: fixed;
