@@ -165,18 +165,18 @@ h2:after {
     content: "";
     background: #b50556;
     position: absolute;
-    bottom: 0;
+    bottom: -15%;
     left:0;
-    height: 12%;
+    height: 18%;
     width: 7vh;
 }
 
 .About-Me p{
     line-height: 2;
     margin-bottom: 30px;
-    font-size: 1.2vw;
+    font-size: 18px;
     justify-content: center;
-    
+    text-align: justify;
 }
 
 .Img-AboutMe{
@@ -205,12 +205,12 @@ h2:after {
 }
 
 .Container-Icons i{
-    font-size: 3vw;
+    font-size: 5vw;
     width: 100%;
 }
 
 .Container-Icons h3{
-    font-size: 1vw;
+    font-size: 15px;
 }
 
 .Contact-Info{
@@ -229,7 +229,7 @@ h2:after {
 .Contact-Info p a i{
     margin-right: 10px;
     color: #070707;
-    font-size: 2.4vw;
+    font-size: 4vw;
 
 }
 /* ------------------------------------------------------------------------------------------------------------------------- */
@@ -329,6 +329,7 @@ h2:after {
     align-content: center;
     text-align: center;
     height: 100vh;
+    width: auto;
     color: white;
 }
 
@@ -352,6 +353,7 @@ h2:after {
 
 
 .Container-Form input, .Container-Form textarea{
+    text-align: center;
     padding: 10px;
     font-size: 16px;
     border: 2px solid #ccc;
@@ -364,9 +366,12 @@ h2:after {
 }
 
 .Container-Form textarea{
+    text-align: center;
+    align-items: center;
+    align-content: center;
     grid-column: span 2;
     resize: none;
-    height: 150px;
+    height: 75px;
 }
 
 .Container-Form button{
