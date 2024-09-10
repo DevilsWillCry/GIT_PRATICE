@@ -205,7 +205,7 @@ h2:after {
 }
 
 .Container-Icons i{
-    font-size: 40px;
+    font-size: 38px;
 }
 
 .Container-Icons h3{
@@ -298,7 +298,7 @@ h2:after {
     display: grid;
     gap: 30px;
     grid-template-columns: repeat(3,1fr);
-    font-size: 1.5VW;
+    font-size: 1.5vw;
 }
 
 
@@ -333,7 +333,7 @@ h2:after {
 }
 
 #Section-Contact h2{
-    display: inline-block;
+    display: inline;
 }
 
 
