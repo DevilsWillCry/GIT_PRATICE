@@ -174,7 +174,7 @@ h2:after {
 .About-Me p{
     line-height: 2;
     margin-bottom: 30px;
-    font-size: 18px;
+    font-size: 23px;
     justify-content: center;
     text-align: justify;
 }
@@ -205,8 +205,7 @@ h2:after {
 }
 
 .Container-Icons i{
-    font-size: 5vw;
-    width: 100%;
+    font-size: 40px;
 }
 
 .Container-Icons h3{
@@ -229,7 +228,7 @@ h2:after {
 .Contact-Info p a i{
     margin-right: 10px;
     color: #070707;
-    font-size: 4vw;
+    font-size: 40px;
 
 }
 /* ------------------------------------------------------------------------------------------------------------------------- */
@@ -329,17 +328,19 @@ h2:after {
     align-content: center;
     text-align: center;
     height: 100vh;
-    width: auto;
+    width: 100%;
     color: white;
 }
 
 #Section-Contact h2{
-    display: inline;
+    display: inline-block;
 }
+
+
 
 #Section-Contact .Container-Form{
     display: grid;
-    max-width: 1000px;
+    max-width: 1000px;    
     gap: 10px;
     grid-auto-columns: 10px;
     padding: 30px;
@@ -348,7 +349,10 @@ h2:after {
     align-items: center;
     align-content: center;
     vertical-align: middle;
-    
+}
+
+textarea:focus::placeholder, input:focus::placeholder {
+    color: transparent;
 }
 
 
@@ -388,8 +392,6 @@ h2:after {
     transition: all 0.5s;
 }
 
-
-
 .Container-Form button:hover{
     transform: scale(1.1,1.1);
     background-color: #930648;
@@ -400,6 +402,8 @@ h2:after {
 
 footer{
     background-color:aqua;
+    height: auto;
+    width: 100%;
 }
 
 .arrow-up{
@@ -422,7 +426,7 @@ footer{
     transform: rotate(180deg);
 }
 
-/*Se creo a partia de un Scrip en JavaScript de arrow-up*/
+/*Se creo a partir de un Scrip en JavaScript de arrow-up*/
 .overArrowUp:hover {
     transform: scale(1.5);
 }
@@ -503,7 +507,7 @@ section {
     
 
     .About-Me p{
-        font-size: 2vw;
+        font-size: 15px;
     }
 
 
@@ -566,6 +570,31 @@ section {
         margin-top: 20px;
     }
 
+
+    #Section-Contact .Container-Form > *{
+        width: 100%;
+        font-size: 15px;
+    }
+
+    #Section-Contact .Container-Form{
+        display: grid;
+        gap: 10px;
+        grid-template-columns: repeat(1, 1fr);
+        grid-auto-rows: minmax(10px, auto);
+        margin-right: 15px;
+    }
+    #Section-Contact .Container-Form .Subject-Form { /* Aplica a "Subject" */
+        grid-column: span 1;
+    }
+
+    .Container-Form textarea{
+        grid-column: span 1;
+    }
+
+    .Container-Form button{
+        grid-column: span 1;
+        margin-left: 12px;
+    }
 
     .checkbtn {
         display: block;
@@ -702,3 +731,11 @@ section {
     }
 
 /*--------------------------RESPONSIVE--------------------------*/
+@media (max-height: 400px) {
+    #Section-Contact{
+        height: auto;
+    }
+    #Section-Contact  h2{
+        margin-top: 45px;
+    }
+}
